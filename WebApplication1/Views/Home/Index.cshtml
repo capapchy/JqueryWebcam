@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://www.jq22.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="~/Scripts/layer/layer.js"></script>
+</head>
+
+<body>
+    <button id="play">拍照</button>
+    <script>
+        $(function () {
+            //弹出一个页面层
+            $('#play').on('click', function () {
+                layer.open({
+                    type: 2,
+                    title: '欢迎页',
+                    maxmin: true,
+                    area: ['800px', '500px'],
+                    content: 'http://localhost:61109/Home/PhotoPage',
+                    end: function () {
+                        alert("关闭页面，刷新数据");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
